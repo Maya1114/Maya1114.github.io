@@ -125,33 +125,89 @@
 <div id="portfolio">
 	<div class="container">
 		<h1 class="sub-title">My Projects</h1>
+		<h2>Software Development</h2>
 		<div class="work-list">
 			<div class="work">
-				<img src="images/work-1.jpg">
+				<img src="images/finance.jpg">
 				<div class="layer">
-					<h3>Social Media App</h3>
-					<p>App description - download it from the play store.</p>
+					<h3>Finance Tracker App</h3>
+					<p>Amazon Sagemaker and Amazon Textract used for server-side code and a client-side app to track finances.</p>
 					<a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
 				</div>
 			</div>
 			<div class="work">
-				<img src="images/work-2.jpg">
+				<img src="images/photos.jpg">
 				<div class="layer">
 					<h3>Photos App</h3>
-					<p>App description - download it from the play store.</p>
+					<p>AWS MySQL database for user accounts, allowing photo storage and download functionality.</p>
 					<a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
 				</div>
 			</div>
 			<div class="work">
-				<img src="images/work-3.jpg">
+				<img src="images/OSM-copy.jpg">
 				<div class="layer">
-					<h3>Online Shopping App</h3>
-					<p>App description - download it from the play store.</p>
+					<h3>OSM Navigation of Northwestern University Campus</h3>
+					<p>Using OpenStreetMap data for navigation and mapping on campus.</p>
 					<a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
 				</div>
 			</div>
+
+			<!-- see more projects -->
+			<h2>Data Engineering</h2>
+			<div class="work more-projects">
+				<img src="images/work-4.jpg">
+				<div class="layer">
+					<h3>ECG and EMG System</h3>
+					<p>Description of the project.</p>
+					<a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+				</div>
+			</div>
+			<div class="work more-projects">
+				<img src="images/work-5.jpg">
+				<div class="layer">
+					<h3>Breath Detector Design</h3>
+					<p>Description of the project.</p>
+					<a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+				</div>
+			</div>
+			<div class="work more-projects">
+				<img src="images/work-6.jpg">
+				<div class="layer">
+					<h3>Pulse Oximeter</h3>
+					<p>Description of the project.</p>
+					<a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+				</div>
+			</div>
+
+			<h2>Biomedical Engineering</h2>
+			<div class="work more-projects">
+				<img src="images/work-4.jpg">
+				<div class="layer">
+					<h3>ECG and EMG System</h3>
+					<p>Description of the project.</p>
+					<a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+				</div>
+			</div>
+			<div class="work more-projects">
+				<img src="images/work-5.jpg">
+				<div class="layer">
+					<h3>Breath Detector Design</h3>
+					<p>Description of the project.</p>
+					<a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+				</div>
+			</div>
+			<div class="work more-projects">
+				<img src="images/work-6.jpg">
+				<div class="layer">
+					<h3>Pulse Oximeter</h3>
+					<p>Description of the project.</p>
+					<a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+				</div>
+			</div>
+
+
 		</div>
-		<a href="#" class="btn">See more</a>
+		<a href="#" class="btn" id="see-more-btn">See more</a>
 	</div>
 </div>
 
@@ -227,6 +283,27 @@
 		.catch(error => console.error('Error!', error.message))
 	})
   </script>
+
+  <script>
+	// JavaScript to toggle visibility of additional projects
+	document.getElementById("see-more-btn").addEventListener("click", function(e) {
+		e.preventDefault(); // Prevent the default link behavior
+		let moreProjects = document.querySelectorAll(".more-projects");
+
+		// Toggle visibility of all additional projects
+		moreProjects.forEach(function(project) {
+			if (project.style.display === "none") {
+				project.style.display = "block";
+			} else {
+				project.style.display = "none";
+			}
+		});
+
+		// Change the button text based on the visibility of the projects
+		let buttonText = (moreProjects[0].style.display === "none") ? "See more" : "See less";
+		document.getElementById("see-more-btn").textContent = buttonText;
+	});
+	</script>
 
 </body>
 </html>
